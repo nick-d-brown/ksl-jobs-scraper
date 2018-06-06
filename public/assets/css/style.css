@@ -114,7 +114,16 @@ h6 {
 
 .heading-styles {
     color: purple;
-    text-shadow: 5px 2px 4px rgba(242, 247, 249, 1)
+    
+}
+
+.heading-styles h1 {
+    color: purple;
+    text-shadow: 1px 1px 7px rgba(228, 228, 228, 0.75);
+    font-size: 3.5rem;
+    font-weight: bold;
+    position: relative;
+    bottom: 75px;
 }
 
 .scraper-button {
@@ -122,9 +131,17 @@ h6 {
     border: 2px solid purple;
     padding: 3px;
     border-radius: 0;
-    color: purple;
-    font-size: 1.2rem;
-    text-shadow: 5px 2px 4px rgba(242, 247, 249, 1)
+    color: white;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 7px rgba(228, 228, 228, 0.75);
+}
+
+.scraper-button a{
+    padding: 3px;
+    border-radius: 0;
+    color: white;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 7px rgba(228, 228, 228, 0.75);
 }
 
 /* job search results containers */
@@ -201,7 +218,7 @@ h6 {
     justify-items: center;
     /* background: transparent; */
     /* border: 2px solid white; */
-    margin: 0 10px;
+    margin: 5px 10px;
     border-radius: 5px;
     padding: 3px;
     border-radius: 5;
@@ -209,7 +226,12 @@ h6 {
     color: white;
     font-size: 1.2rem;
     /* text-shadow: 5px 2px 4px rgba(242, 247, 249, 1) */
-    -webkit-appearance: button-bevel;
+    /* -webkit-appearance: button-bevel; */
+}
+
+.delete-button a {
+    color: white;
+    text-decoration: none;
 }
 
 .save-button {
@@ -218,15 +240,68 @@ h6 {
     justify-items: center;
     /* background: transparent; */
     /* border: 2px solid white; */
-    margin: 0 10px;
+    margin: 5px 10px;
     border-radius: 5px;
     padding: 3px;
     border-radius: 5;
     background-color: green;
     color: white;
     font-size: 1.2rem;
-    /* text-shadow: 5px 2px 4px rgba(242, 247, 249, 1) */
-    
+    /* text-shadow: 5px 2px 4px rgba(242, 247, 249, 1) */ 
+    cursor: pointer;
+}
+
+.save-button a{
+    color: white;
+    text-decoration: none;
+}
+
+.notes-header {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.saved-notes-header {
+    padding: 15px;
+    text-decoration: underline;
+}
+
+.all-saved-notes-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 5px;
+    background-color: rgba(147, 147, 147, 0.765);
+    border: 2px solid purple;
+    margin: 0 auto;
+    width: 50%;
+    min-height: 200px; 
+}
+
+.note-input {
+    display: flex;
+    flex-direction: column;
+        margin: 0px 25px;
+}
+.note-input input{
+    margin: 5px 0px;
+}
+.note-input textarea {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100px;
+}
+
+.add-new-note-container {
+     display: flex;
+     justify-content: center;
+     align-content: center;
+     padding: 5px;
+     background-color: rgba(147, 147, 147, 0.765);
+     border: 2px solid purple;
+     margin: 5px auto;
+     width: 50%;
+     min-height: 0px;
 }
 
 .note-button {
@@ -235,7 +310,7 @@ h6 {
     justify-items: center;
     /* background: transparent; */
     /* border: 2px solid white; */
-    margin: 0 10px;
+    margin: 5px 10px;
     border-radius: 5px;
     padding: 3px;
     border-radius: 5;
@@ -243,8 +318,14 @@ h6 {
     color: white;
     font-size: 1.2rem;
     /* text-shadow: 5px 2px 4px rgba(242, 247, 249, 1) */
+    cursor: pointer;
     
 }
+
+/* .note-button a {
+    color: white;
+    text-decoration: none;
+} */
 
 .notes-section  {
     display: flex;

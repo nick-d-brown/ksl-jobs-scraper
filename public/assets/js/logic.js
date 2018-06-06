@@ -1,33 +1,52 @@
 // Linked to main.handlebars
 $(document).on("click", ".note-button", function () {
     // Empty the notes from the note section
-    // $("#notes").empty();
+    $("#notes").empty();
     $("#notes").toggleClass("hidden");
     // Save the id from the p tag
     var thisId = $(this).attr("data-id");
-
+    console.log(this);
+    
     $.ajax({
             method: "GET",
             url: "/jobs/" + thisId
         })
-        // With that done, add the note information to the page
         .then(function (data) {
             console.log(data);
-            // The title of the article
-            // $("#notes").append("<h2>" + data.title + "</h2>");
-            // // An input to enter a new title
-            // $("#notes").append("<input id='titleinput' name='title' >");
-            // // A textarea to add a new note body
-            // $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
-            // // A button to submit a new note, with the id of the article saved to it
-            // $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
-            // If there's a note in the article
+            $("#notes").append("<h2>" + data.title + "</h2>");
+            $("#notes").append("<div class='note-input'>");
+            $(".note-input").append("<input id='titleinput' name='title' placeholder='Note Title'>");
+            $(".note-input").append("<textarea id='bodyinput' name='body' placeholder='Note Body'></textarea>");
+            // $("#notes").append("<div>");
+            $("#notes").append("<button data-id='" + data._id + "'class='save-button' id='savenote'>Save Note</button>");
+
             if (data.note) {
-                // Place the title of the note in the title input
                 $("#titleinput").val(data.note.title);
-                // Place the body of the note in the body textarea
                 $("#bodyinput").val(data.note.body);
             }
         });
+});
+
+
+$(document).on("click", "#savenote", function () {
+    $("#notes").toggleClass("hidden");
+    var thisId = $(this).attr("data-id");
+    $.ajax({
+            method: "POST",
+            url: "/jobs/note/" + thisId,
+            data: {
+                // Value taken from title input
+                title: $("#titleinput").val(),
+                // Value taken from note textarea
+                body: $("#bodyinput").val()
+            }
+        })
+        .then(function (data) {
+            console.log(data);
+            $("#notes").empty();
+        });
+
+    $("#titleinput").val("");
+    $("#bodyinput").val("");
 });

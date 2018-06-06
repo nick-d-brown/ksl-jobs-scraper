@@ -25,18 +25,18 @@
                 delete
             </a>
         </button>
-        <button class="note-button">
+        <button class="note-button" data-id="{{this._id}}">
             Add Note
         </button>
     </div>
-     <div class="notes-section hidden" id="notes">
-        <h2>{{data.title}}</h2>
-        <input id="titleinput" name="title">
-        <textarea id='bodyinput' name='body'></textarea>
-        <button data-id="{{data._id}}" id="savenote">Save Note</button>
-        <div class="previous-notes">
+     {{!-- <div class="notes-section hidden" id="notes"> --}}
+        {{!-- <h2>{{data.title}}</h2> --}}
+        {{!-- <input id="titleinput" name="title"> --}}
+        {{!-- <textarea id='bodyinput' name='body'></textarea> --}}
+        {{!-- <button data-id="{{data._id}}" id="savenote">Save Note</button> --}}
+        {{!-- <div class="previous-notes"> --}}
             {{!-- each notes --}}
                 {{!-- display note desc and delete btn --}}
-        </div>
-     </div>
+        {{!-- </div> --}}
+     {{!-- </div> --}}
 </div>

@@ -146,6 +146,25 @@ app.get("/jobs/save/:id", function (req, res) {
     });
 });
 
+app.post("/jobs/note/:id", function (req,res) {
+    Note.create(req.body)
+        .then(function (dbNote) {
+            return Posting.findOneAndUpdate({
+                _id: req.params.id
+            }, {
+                note: dbNote._id
+            }, {
+                new: true
+            });
+        })
+        .then(function (dbArticle) {
+            res.json(dbArticle);
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+});
+
 // DELETE - save job posting
 app.get("/jobs/delete/:id", function (req, res) {
     Posting.deleteOne({
