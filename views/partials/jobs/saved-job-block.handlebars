@@ -1,0 +1,42 @@
+<div class="card-container" data-id="{{this._id}}">
+    <div class="posting-card">
+        <div class="posting-card-data-field">
+            <p>Job Title: </p>
+            <p>{{this.title}}</p>
+        </div>
+        <div class="posting-card-data-field">
+            <p>Job Title: </p>
+            <p>
+                <a href="https://www.ksl.com{{this.link}}">Job Link</a>
+            </p>
+        </div>
+        <div class="posting-card-data-field">
+            <p>Cmpany Name: </p>
+            <p>{{this.compName}}</p>
+        </div>
+        <div class="posting-card-data-field">
+            <p>Job Description: </p>
+            <p>{{this.desc}}</p>
+        </div>
+    </div>
+    <div class="buttons-box">
+        <button class="delete-button">
+            <a href="/jobs/delete/{{this._id}}">
+                delete
+            </a>
+        </button>
+        <button class="note-button">
+            Add Note
+        </button>
+    </div>
+     <div class="notes-section hidden" id="notes">
+        <h2>{{data.title}}</h2>
+        <input id="titleinput" name="title">
+        <textarea id='bodyinput' name='body'></textarea>
+        <button data-id="{{data._id}}" id="savenote">Save Note</button>
+        <div class="previous-notes">
+            {{!-- each notes --}}
+                {{!-- display note desc and delete btn --}}
+        </div>
+     </div>
+</div>

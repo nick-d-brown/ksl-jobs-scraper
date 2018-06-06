@@ -1,6 +1,98 @@
 
 
-    {{!--  navbar --}}
 
-    <h1>Welcome to the LinkedIn Jobs Scraper APP</h1>
+{{!-- hero/head image --}}
+<div class="hero-head">
+    <div class="heading-styles">
+        <h1>It's Time to find you a job.</h1>
+        <h2>Welcome to the KSL Jobs website Scraper</h2>
+    </div>
+
+    <div class="job-search-buttons">
+        <a href="/jobs/new/fullStackDev"><button class="scraper-button">Full Stack Developer</button></a>
+        <a href="/jobs/new/frontEndDev"><button class="scraper-button">Front End Developer</button></a>
+        <a href="/jobs/new/backEndDev"><button class="scraper-button">Back End Developer</button></a>
+        <a href="/jobs/new/webDev"><button class="scraper-button">Web Developer</button></a>
+        <a href="/jobs/new/uIuXDev"><button class="scraper-button">UI/UX Developer</button></a>
+    </div>
+</div>
+
+{{!-- job search results --}}
+    {{!-- Full Stack Developer --}}
+<div class="job-results-container">
+    <h2 class="positions-heading">Full Stack Developer Positions</h2>
+    <div class="job-cards-container">
+        {{#each postings}}
+            {{#if this.isFullStackDev}}
+                {{#if this.isSaved}}
+                {{else}}
+                    {{> jobs/job-block}}
+                {{/if}}    
+            {{/if}}
+        {{/each}}
+    </div>
+    
+</div>
+    {{!-- Front End Developer --}}
+<div class="job-results-container">
+    <h2 class="positions-heading">Front End Developer Positions</h2>
+    <div class="job-cards-container">
+        {{#each postings}}
+            {{#if this.isFrontEndDev}}
+                {{#if this.isSaved}}
+                {{else}}
+                    {{> jobs/job-block}}
+                {{/if}}    
+            {{/if}}
+        {{/each}}
+    </div>
+    
+</div>
+    {{!-- Back End Developer --}}
+<div class="job-results-container">
+    <h2 class="positions-heading">Back End Developer Positions</h2>
+    <div class="job-cards-container">
+        {{#each postings}}
+            {{#if this.isBackEndDev}}
+                {{#if this.isSaved}}
+                {{else}}
+                    {{> jobs/job-block}}
+                {{/if}}    
+            {{/if}}
+        {{/each}}
+    </div>
+    
+</div>
+    {{!-- Web Developer --}}
+<div class="job-results-container">
+    <h2 class="positions-heading">Web Developer Positions</h2>
+    <div class="job-cards-container">
+        {{#each postings}}
+            {{#if this.isWebDev}}
+                {{#if this.isSaved}}
+                {{else}}
+                    {{> jobs/job-block}}
+                {{/if}}    
+            {{/if}}
+        {{/each}}
+    </div>
+    
+</div>
+    {{!-- UI/UX Developer --}}
+<div class="job-results-container">
+    <h2 class="positions-heading">UI/UX Developer Positions</h2>
+    <div class="job-cards-container">
+        {{#each postings}}
+            {{#if this.isUiUxDev}}
+                {{#if this.isSaved}}
+                {{else}}
+                    {{> jobs/job-block}}
+                {{/if}}    
+            {{/if}}
+        {{/each}}
+    </div>
+    
+</div>
+
+
     

@@ -1,0 +1,34 @@
+<div class="card-container" data-id="{{this._id}}">
+    
+    <div class="posting-card">
+        <div class="posting-card-data-field">
+            <p>Job Title: </p>
+            <p>{{this.title}}</p>
+        </div>
+        <div class="posting-card-data-field">
+            <p>Job Title: </p>
+            <p>
+                <a href="https://www.ksl.com{{this.link}}">Job Link</a>
+            </p>
+        </div>
+        <div class="posting-card-data-field">
+            <p>Cmpany Name: </p>
+            <p>{{this.compName}}</p>
+        </div>
+        <div class="posting-card-data-field">
+            <p>Job Description: </p>
+            <p>{{this.desc}}</p>
+        </div>  
+    </div>
+    <div class="buttons-box">
+    <button class="delete-button">
+        <a href="/jobs/delete/{{this._id}}">
+            delete
+        </a>
+    </button>
+    <button class="save-button">
+        <a href="/jobs/save/{{this._id}}">Save</a>
+    </button>
+    </div>
+</div>
+

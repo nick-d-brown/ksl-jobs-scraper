@@ -1,0 +1,18 @@
+{{!-- hero/head image --}}
+<div class="hero-head">
+    <div class="heading-styles">
+        <h1>Saved Job Postings</h1>
+    </div>
+</div>
+
+<div class="job-results-container">
+    <h2 class="positions-heading">Saved Positions</h2>
+    <div class="job-cards-container">
+        {{#each postings}} 
+            {{#if this.isSaved}} 
+                {{> jobs/saved-job-block}} 
+            {{/if}} 
+        {{/each}}
+    </div>
+
+</div>
