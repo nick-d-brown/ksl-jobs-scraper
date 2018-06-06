@@ -50,13 +50,13 @@ module.exports = {
                                 console.log(err);
                             } else {
                                 console.log("Your result was saved!\n" + data);
-
                             }
                         });
                     }
                 });
             });
         });
+        
     }
 
 }

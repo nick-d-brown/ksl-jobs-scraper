@@ -8,15 +8,6 @@
 <div class="notes-header">
     <h2 class="saved-notes-header">Saved Notes</h2>
     <div class="all-saved-notes-container">
-        {{#each postings}}
-            {{#if this.note}}
-                {{this.title}}
-                {{#each this.note}}
-                    {{ this.note.title}}
-                    {{ this.note.body}}
-                {{/each}}
-            {{/if}}
-        {{/each}}
     </div>
     <div class="add-new-note-container hidden" id="notes"></div>
 </div>

@@ -1,4 +1,24 @@
-// Linked to main.handlebars
+
+$(window).load(function () {
+     $.ajax({
+         method: "GET",
+         url: "/jobs/data"
+     })
+     .then(function (data) {
+         console.log(data);
+         for (let i = 0; i < data.length; i++) {
+              if (data[i].note) {
+                  $(".all-saved-notes-container").append("<div class='individual-notes'>");
+                  $(".individual-notes").append("<p> Position Title: " + data[i].title + "</p>");
+                  $(".individual-notes").append("<p>" + data[i].note.title + "</p>");
+                  $(".individual-notes").append("<p>" + data[i].note.body + "</p>");
+                  $(".individual-notes").append("<button class='delete-button' data-id='" + data[i].note._id + "' id='delete-note-button'>Delete</button>");
+
+              }             
+         }        
+    });
+});
+
 $(document).on("click", ".note-button", function () {
     // Empty the notes from the note section
     $("#notes").empty();
@@ -49,4 +69,28 @@ $(document).on("click", "#savenote", function () {
 
     $("#titleinput").val("");
     $("#bodyinput").val("");
+    location.href = "/jobs/saved";
 });
+
+$(document).on("click", "#delete-note-button", function () {
+    var thisId = $(this).attr("data-id");
+    console.log(thisId);
+    
+    $.ajax({
+            method: "POST",
+            url: "/jobs/note/delete/" + thisId,
+            // data: {
+            //     // Value taken from title input
+            //     title: $("#titleinput").val(),
+            //     // Value taken from note textarea
+            //     body: $("#bodyinput").val()
+            // }
+        })
+        .then(function (data) {
+            console.log(data);
+            // location.href = "/jobs/saved";
+        });
+
+
+});
+

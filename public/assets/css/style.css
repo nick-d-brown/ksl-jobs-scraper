@@ -48,6 +48,7 @@ h6 {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    z-index: 1000;
 }
 
 .navbar .logo {
@@ -114,7 +115,14 @@ h6 {
 
 .heading-styles {
     color: purple;
-    
+}
+
+.heading-styles p{
+    color: purple;
+    text-shadow: 1px 1px 7px rgba(228, 228, 228, 0.75);
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 90px;
 }
 
 .heading-styles h1 {
@@ -123,11 +131,20 @@ h6 {
     font-size: 3.5rem;
     font-weight: bold;
     position: relative;
-    bottom: 75px;
+    bottom: 90px;
+}
+
+.heading-styles h2 {
+    color: purple;
+    text-shadow: 1px 1px 7px rgba(228, 228, 228, 0.75);
+    font-size: 3.5rem;
+    font-weight: bold;
+    position: relative;
+    bottom: 90px;
 }
 
 .scraper-button {
-    background: transparent;
+    background: black;
     border: 2px solid purple;
     padding: 3px;
     border-radius: 0;
@@ -145,6 +162,22 @@ h6 {
 }
 
 /* job search results containers */
+
+.individual-notes {
+    display: flex;
+    flex-direction: column;
+    color: white;   
+}
+
+.individual-notes p{
+   margin: 5px 0; 
+}
+.individual-notes p:nth-child(1) {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+
+}
 
 .positions-heading {
     padding: 15px;
@@ -198,8 +231,16 @@ h6 {
 }
 
 .posting-card-data-field {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
+}
+
+.posting-card-data-field p:nth-child(odd) {
+    text-decoration: underline;
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
 }
 
 .posting-card-data-field p{
@@ -295,13 +336,25 @@ h6 {
 .add-new-note-container {
      display: flex;
      justify-content: center;
-     align-content: center;
+     align-items: center;
      padding: 5px;
      background-color: rgba(147, 147, 147, 0.765);
      border: 2px solid purple;
      margin: 5px auto;
      width: 50%;
      min-height: 0px;
+}
+
+.add-new-note-container h2{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.add-new-note-container button{
+ height: 50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .note-button {

@@ -82,10 +82,24 @@ app.get("/jobs/saved", function (req, res) {
     });
 });
 
+app.get("/jobs/data", function (req,res) {
+       Posting.find({isSaved: true})
+       .populate("note")
+       .then(function (data) {
+              res.json(data)
+       })
+       .catch(function (err) {
+           // If an error occurred, send it to the client
+           res.json(err);
+       });
+});
+
+
 // GET - SCRAPE Full Stack Dev Route
 app.get("/jobs/new/fullStackDev", function (req,res) {  
     var fullStackDev = "https://www.ksl.com/jobs/search/miles/0/keywords/full%20stack%20developer/page/1";
     scrapeJS.scrape(fullStackDev);
+    // res.redirect("/jobs");
     res.redirect("/jobs");
 })
 // GET - SCRAPE Full Stack Dev Route
@@ -163,6 +177,27 @@ app.post("/jobs/note/:id", function (req,res) {
         .catch(function (err) {
             res.json(err);
         });
+});
+
+app.post("/jobs/note/delete/:id", function (req, res) {
+    Posting.update({
+        note: {_id: "5b186234909b302aff33c3c9"}
+    },
+    function (err, data) {
+        if (err) {
+            console.log("You encountered this error: " + err);
+        } else {
+            // res.redirect("/jobs");
+            // res.redirect('back');
+        }
+    });
+  
+        // .then(function (dbArticle) {
+        //     res.json(dbArticle);
+        // })
+        // .catch(function (err) {
+        //     res.json(err);
+        // });
 });
 
 // DELETE - save job posting
