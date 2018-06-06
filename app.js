@@ -23,6 +23,7 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/ksl_jobs_db"
 
 // ================== APP CONFIG ============================================
     // connects to mongo Database for app
+mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
     // sets handlebars as our default view engine
 app.engine("handlebars", exphbs({
