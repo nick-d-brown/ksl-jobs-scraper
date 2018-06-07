@@ -28,10 +28,8 @@ One of the problems with searching for a job in web development is the number of
 
 
 
-![Main Page](https://github.com/nick-d-brown/ksl-jobs-scrape/blob/master/public/assets/images/theHuntHomepage.png)
-![Input New Company](https://github.com/nick-d-brown/ksl-jobs-scrape/blob/master/public/assets/images/theHuntInputNew.png)
-![Update Existing Company](https://github.com/nick-d-brown/ksl-jobs-scrape/blob/master/public/assets/images/theHuntInputEdit.png)
-![Delete Existing Company](https://github.com/nick-d-brown/ksl-jobs-scrape/blob/master/public/assets/images/theHuntDeleteCompany.png)
+![Main Page](https://github.com/nick-d-brown/ksl-jobs-scraper/blob/master/public/assets/images/kslScraper.png)
+
 
 
 
